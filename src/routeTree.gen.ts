@@ -14,6 +14,7 @@ import { Route as ThreatDetectionRouteImport } from './routes/threat-detection'
 import { Route as SocCopilotRouteImport } from './routes/soc-copilot'
 import { Route as NistRouteImport } from './routes/nist'
 import { Route as MitreRouteImport } from './routes/mitre'
+import { Route as IncidentsRouteImport } from './routes/incidents'
 import { Route as ExplainableAiRouteImport } from './routes/explainable-ai'
 import { Route as EdrRouteImport } from './routes/edr'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,11 @@ const MitreRoute = MitreRouteImport.update({
   path: '/mitre',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IncidentsRoute = IncidentsRouteImport.update({
+  id: '/incidents',
+  path: '/incidents',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExplainableAiRoute = ExplainableAiRouteImport.update({
   id: '/explainable-ai',
   path: '/explainable-ai',
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/edr': typeof EdrRoute
   '/explainable-ai': typeof ExplainableAiRoute
+  '/incidents': typeof IncidentsRoute
   '/mitre': typeof MitreRoute
   '/nist': typeof NistRoute
   '/soc-copilot': typeof SocCopilotRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/edr': typeof EdrRoute
   '/explainable-ai': typeof ExplainableAiRoute
+  '/incidents': typeof IncidentsRoute
   '/mitre': typeof MitreRoute
   '/nist': typeof NistRoute
   '/soc-copilot': typeof SocCopilotRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/edr': typeof EdrRoute
   '/explainable-ai': typeof ExplainableAiRoute
+  '/incidents': typeof IncidentsRoute
   '/mitre': typeof MitreRoute
   '/nist': typeof NistRoute
   '/soc-copilot': typeof SocCopilotRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/edr'
     | '/explainable-ai'
+    | '/incidents'
     | '/mitre'
     | '/nist'
     | '/soc-copilot'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/edr'
     | '/explainable-ai'
+    | '/incidents'
     | '/mitre'
     | '/nist'
     | '/soc-copilot'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/edr'
     | '/explainable-ai'
+    | '/incidents'
     | '/mitre'
     | '/nist'
     | '/soc-copilot'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   EdrRoute: typeof EdrRoute
   ExplainableAiRoute: typeof ExplainableAiRoute
+  IncidentsRoute: typeof IncidentsRoute
   MitreRoute: typeof MitreRoute
   NistRoute: typeof NistRoute
   SocCopilotRoute: typeof SocCopilotRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MitreRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/incidents': {
+      id: '/incidents'
+      path: '/incidents'
+      fullPath: '/incidents'
+      preLoaderRoute: typeof IncidentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/explainable-ai': {
       id: '/explainable-ai'
       path: '/explainable-ai'
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   EdrRoute: EdrRoute,
   ExplainableAiRoute: ExplainableAiRoute,
+  IncidentsRoute: IncidentsRoute,
   MitreRoute: MitreRoute,
   NistRoute: NistRoute,
   SocCopilotRoute: SocCopilotRoute,
