@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as XdrRouteImport } from './routes/xdr'
 import { Route as ThreatDetectionRouteImport } from './routes/threat-detection'
 import { Route as ExplainableAiRouteImport } from './routes/explainable-ai'
 import { Route as EdrRouteImport } from './routes/edr'
 import { Route as IndexRouteImport } from './routes/index'
 
+const XdrRoute = XdrRouteImport.update({
+  id: '/xdr',
+  path: '/xdr',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ThreatDetectionRoute = ThreatDetectionRouteImport.update({
   id: '/threat-detection',
   path: '/threat-detection',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/edr': typeof EdrRoute
   '/explainable-ai': typeof ExplainableAiRoute
   '/threat-detection': typeof ThreatDetectionRoute
+  '/xdr': typeof XdrRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/edr': typeof EdrRoute
   '/explainable-ai': typeof ExplainableAiRoute
   '/threat-detection': typeof ThreatDetectionRoute
+  '/xdr': typeof XdrRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,20 @@ export interface FileRoutesById {
   '/edr': typeof EdrRoute
   '/explainable-ai': typeof ExplainableAiRoute
   '/threat-detection': typeof ThreatDetectionRoute
+  '/xdr': typeof XdrRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/edr' | '/explainable-ai' | '/threat-detection'
+  fullPaths: '/' | '/edr' | '/explainable-ai' | '/threat-detection' | '/xdr'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/edr' | '/explainable-ai' | '/threat-detection'
-  id: '__root__' | '/' | '/edr' | '/explainable-ai' | '/threat-detection'
+  to: '/' | '/edr' | '/explainable-ai' | '/threat-detection' | '/xdr'
+  id:
+    | '__root__'
+    | '/'
+    | '/edr'
+    | '/explainable-ai'
+    | '/threat-detection'
+    | '/xdr'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +82,18 @@ export interface RootRouteChildren {
   EdrRoute: typeof EdrRoute
   ExplainableAiRoute: typeof ExplainableAiRoute
   ThreatDetectionRoute: typeof ThreatDetectionRoute
+  XdrRoute: typeof XdrRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/xdr': {
+      id: '/xdr'
+      path: '/xdr'
+      fullPath: '/xdr'
+      preLoaderRoute: typeof XdrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/threat-detection': {
       id: '/threat-detection'
       path: '/threat-detection'
@@ -107,6 +130,7 @@ const rootRouteChildren: RootRouteChildren = {
   EdrRoute: EdrRoute,
   ExplainableAiRoute: ExplainableAiRoute,
   ThreatDetectionRoute: ThreatDetectionRoute,
+  XdrRoute: XdrRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
