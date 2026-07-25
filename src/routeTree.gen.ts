@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ThreatDetectionRouteImport } from './routes/threat-detection'
 import { Route as ExplainableAiRouteImport } from './routes/explainable-ai'
+import { Route as EdrRouteImport } from './routes/edr'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ThreatDetectionRoute = ThreatDetectionRouteImport.update({
@@ -23,6 +24,11 @@ const ExplainableAiRoute = ExplainableAiRouteImport.update({
   path: '/explainable-ai',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EdrRoute = EdrRouteImport.update({
+  id: '/edr',
+  path: '/edr',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/edr': typeof EdrRoute
   '/explainable-ai': typeof ExplainableAiRoute
   '/threat-detection': typeof ThreatDetectionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/edr': typeof EdrRoute
   '/explainable-ai': typeof ExplainableAiRoute
   '/threat-detection': typeof ThreatDetectionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/edr': typeof EdrRoute
   '/explainable-ai': typeof ExplainableAiRoute
   '/threat-detection': typeof ThreatDetectionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/explainable-ai' | '/threat-detection'
+  fullPaths: '/' | '/edr' | '/explainable-ai' | '/threat-detection'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/explainable-ai' | '/threat-detection'
-  id: '__root__' | '/' | '/explainable-ai' | '/threat-detection'
+  to: '/' | '/edr' | '/explainable-ai' | '/threat-detection'
+  id: '__root__' | '/' | '/edr' | '/explainable-ai' | '/threat-detection'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EdrRoute: typeof EdrRoute
   ExplainableAiRoute: typeof ExplainableAiRoute
   ThreatDetectionRoute: typeof ThreatDetectionRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExplainableAiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/edr': {
+      id: '/edr'
+      path: '/edr'
+      fullPath: '/edr'
+      preLoaderRoute: typeof EdrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EdrRoute: EdrRoute,
   ExplainableAiRoute: ExplainableAiRoute,
   ThreatDetectionRoute: ThreatDetectionRoute,
 }

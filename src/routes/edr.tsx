@@ -12,7 +12,7 @@ export const Route = createFileRoute("/edr")({
   component: () => <Page/>,
 });
 
-const statusTone = { healthy: "green", monitoring: "cyan", "at-risk": "amber", isolated: "violet", compromised: "red" } as const;
+const statusTone = { healthy: "green", monitoring: "cyan", "at-risk": "amber", isolated: "slate", compromised: "red" } as const;
 
 function Page() {
   const [sel, setSel] = useState(endpoints[1]);
