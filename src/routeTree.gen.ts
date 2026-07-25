@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ThreatDetectionRouteImport } from './routes/threat-detection'
+import { Route as ExplainableAiRouteImport } from './routes/explainable-ai'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ThreatDetectionRoute = ThreatDetectionRouteImport.update({
   id: '/threat-detection',
   path: '/threat-detection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExplainableAiRoute = ExplainableAiRouteImport.update({
+  id: '/explainable-ai',
+  path: '/explainable-ai',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/explainable-ai': typeof ExplainableAiRoute
   '/threat-detection': typeof ThreatDetectionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/explainable-ai': typeof ExplainableAiRoute
   '/threat-detection': typeof ThreatDetectionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/explainable-ai': typeof ExplainableAiRoute
   '/threat-detection': typeof ThreatDetectionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/threat-detection'
+  fullPaths: '/' | '/explainable-ai' | '/threat-detection'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/threat-detection'
-  id: '__root__' | '/' | '/threat-detection'
+  to: '/' | '/explainable-ai' | '/threat-detection'
+  id: '__root__' | '/' | '/explainable-ai' | '/threat-detection'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExplainableAiRoute: typeof ExplainableAiRoute
   ThreatDetectionRoute: typeof ThreatDetectionRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/threat-detection'
       fullPath: '/threat-detection'
       preLoaderRoute: typeof ThreatDetectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explainable-ai': {
+      id: '/explainable-ai'
+      path: '/explainable-ai'
+      fullPath: '/explainable-ai'
+      preLoaderRoute: typeof ExplainableAiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExplainableAiRoute: ExplainableAiRoute,
   ThreatDetectionRoute: ThreatDetectionRoute,
 }
 export const routeTree = rootRouteImport
