@@ -9,91 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as XdrRouteImport } from './routes/xdr'
-import { Route as VoxcryptRouteImport } from './routes/voxcrypt'
-import { Route as ThreatIntelRouteImport } from './routes/threat-intel'
-import { Route as ThreatDetectionRouteImport } from './routes/threat-detection'
-import { Route as SocCopilotRouteImport } from './routes/soc-copilot'
-import { Route as RoadmapRouteImport } from './routes/roadmap'
-import { Route as ReportsRouteImport } from './routes/reports'
-import { Route as NistRouteImport } from './routes/nist'
-import { Route as MitreRouteImport } from './routes/mitre'
-import { Route as IncidentsRouteImport } from './routes/incidents'
-import { Route as ExplainableAiRouteImport } from './routes/explainable-ai'
-import { Route as ExecutiveRouteImport } from './routes/executive'
-import { Route as EvidenceRouteImport } from './routes/evidence'
-import { Route as EdrRouteImport } from './routes/edr'
-import { Route as DfirRouteImport } from './routes/dfir'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DfirRouteImport } from './routes/dfir'
+import { Route as EdrRouteImport } from './routes/edr'
+import { Route as EvidenceRouteImport } from './routes/evidence'
+import { Route as ExecutiveRouteImport } from './routes/executive'
+import { Route as ExplainableAiRouteImport } from './routes/explainable-ai'
+import { Route as IncidentsRouteImport } from './routes/incidents'
+import { Route as MitreRouteImport } from './routes/mitre'
+import { Route as NistRouteImport } from './routes/nist'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as SocCopilotRouteImport } from './routes/soc-copilot'
+import { Route as ThreatDetectionRouteImport } from './routes/threat-detection'
+import { Route as ThreatIntelRouteImport } from './routes/threat-intel'
+import { Route as VoxcryptRouteImport } from './routes/voxcrypt'
+import { Route as XdrRouteImport } from './routes/xdr'
 
-const XdrRoute = XdrRouteImport.update({
-  id: '/xdr',
-  path: '/xdr',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const VoxcryptRoute = VoxcryptRouteImport.update({
-  id: '/voxcrypt',
-  path: '/voxcrypt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ThreatIntelRoute = ThreatIntelRouteImport.update({
-  id: '/threat-intel',
-  path: '/threat-intel',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ThreatDetectionRoute = ThreatDetectionRouteImport.update({
-  id: '/threat-detection',
-  path: '/threat-detection',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SocCopilotRoute = SocCopilotRouteImport.update({
-  id: '/soc-copilot',
-  path: '/soc-copilot',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RoadmapRoute = RoadmapRouteImport.update({
-  id: '/roadmap',
-  path: '/roadmap',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReportsRoute = ReportsRouteImport.update({
-  id: '/reports',
-  path: '/reports',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NistRoute = NistRouteImport.update({
-  id: '/nist',
-  path: '/nist',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MitreRoute = MitreRouteImport.update({
-  id: '/mitre',
-  path: '/mitre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IncidentsRoute = IncidentsRouteImport.update({
-  id: '/incidents',
-  path: '/incidents',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExplainableAiRoute = ExplainableAiRouteImport.update({
-  id: '/explainable-ai',
-  path: '/explainable-ai',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExecutiveRoute = ExecutiveRouteImport.update({
-  id: '/executive',
-  path: '/executive',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EvidenceRoute = EvidenceRouteImport.update({
-  id: '/evidence',
-  path: '/evidence',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EdrRoute = EdrRouteImport.update({
-  id: '/edr',
-  path: '/edr',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DfirRoute = DfirRouteImport.update({
@@ -101,9 +36,74 @@ const DfirRoute = DfirRouteImport.update({
   path: '/dfir',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const EdrRoute = EdrRouteImport.update({
+  id: '/edr',
+  path: '/edr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvidenceRoute = EvidenceRouteImport.update({
+  id: '/evidence',
+  path: '/evidence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutiveRoute = ExecutiveRouteImport.update({
+  id: '/executive',
+  path: '/executive',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExplainableAiRoute = ExplainableAiRouteImport.update({
+  id: '/explainable-ai',
+  path: '/explainable-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IncidentsRoute = IncidentsRouteImport.update({
+  id: '/incidents',
+  path: '/incidents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MitreRoute = MitreRouteImport.update({
+  id: '/mitre',
+  path: '/mitre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NistRoute = NistRouteImport.update({
+  id: '/nist',
+  path: '/nist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SocCopilotRoute = SocCopilotRouteImport.update({
+  id: '/soc-copilot',
+  path: '/soc-copilot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThreatDetectionRoute = ThreatDetectionRouteImport.update({
+  id: '/threat-detection',
+  path: '/threat-detection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThreatIntelRoute = ThreatIntelRouteImport.update({
+  id: '/threat-intel',
+  path: '/threat-intel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VoxcryptRoute = VoxcryptRouteImport.update({
+  id: '/voxcrypt',
+  path: '/voxcrypt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const XdrRoute = XdrRouteImport.update({
+  id: '/xdr',
+  path: '/xdr',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -240,102 +240,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/xdr': {
-      id: '/xdr'
-      path: '/xdr'
-      fullPath: '/xdr'
-      preLoaderRoute: typeof XdrRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/voxcrypt': {
-      id: '/voxcrypt'
-      path: '/voxcrypt'
-      fullPath: '/voxcrypt'
-      preLoaderRoute: typeof VoxcryptRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/threat-intel': {
-      id: '/threat-intel'
-      path: '/threat-intel'
-      fullPath: '/threat-intel'
-      preLoaderRoute: typeof ThreatIntelRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/threat-detection': {
-      id: '/threat-detection'
-      path: '/threat-detection'
-      fullPath: '/threat-detection'
-      preLoaderRoute: typeof ThreatDetectionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/soc-copilot': {
-      id: '/soc-copilot'
-      path: '/soc-copilot'
-      fullPath: '/soc-copilot'
-      preLoaderRoute: typeof SocCopilotRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/roadmap': {
-      id: '/roadmap'
-      path: '/roadmap'
-      fullPath: '/roadmap'
-      preLoaderRoute: typeof RoadmapRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reports': {
-      id: '/reports'
-      path: '/reports'
-      fullPath: '/reports'
-      preLoaderRoute: typeof ReportsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/nist': {
-      id: '/nist'
-      path: '/nist'
-      fullPath: '/nist'
-      preLoaderRoute: typeof NistRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mitre': {
-      id: '/mitre'
-      path: '/mitre'
-      fullPath: '/mitre'
-      preLoaderRoute: typeof MitreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/incidents': {
-      id: '/incidents'
-      path: '/incidents'
-      fullPath: '/incidents'
-      preLoaderRoute: typeof IncidentsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/explainable-ai': {
-      id: '/explainable-ai'
-      path: '/explainable-ai'
-      fullPath: '/explainable-ai'
-      preLoaderRoute: typeof ExplainableAiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/executive': {
-      id: '/executive'
-      path: '/executive'
-      fullPath: '/executive'
-      preLoaderRoute: typeof ExecutiveRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/evidence': {
-      id: '/evidence'
-      path: '/evidence'
-      fullPath: '/evidence'
-      preLoaderRoute: typeof EvidenceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/edr': {
-      id: '/edr'
-      path: '/edr'
-      fullPath: '/edr'
-      preLoaderRoute: typeof EdrRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dfir': {
@@ -345,11 +254,102 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DfirRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/edr': {
+      id: '/edr'
+      path: '/edr'
+      fullPath: '/edr'
+      preLoaderRoute: typeof EdrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evidence': {
+      id: '/evidence'
+      path: '/evidence'
+      fullPath: '/evidence'
+      preLoaderRoute: typeof EvidenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/executive': {
+      id: '/executive'
+      path: '/executive'
+      fullPath: '/executive'
+      preLoaderRoute: typeof ExecutiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explainable-ai': {
+      id: '/explainable-ai'
+      path: '/explainable-ai'
+      fullPath: '/explainable-ai'
+      preLoaderRoute: typeof ExplainableAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/incidents': {
+      id: '/incidents'
+      path: '/incidents'
+      fullPath: '/incidents'
+      preLoaderRoute: typeof IncidentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mitre': {
+      id: '/mitre'
+      path: '/mitre'
+      fullPath: '/mitre'
+      preLoaderRoute: typeof MitreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nist': {
+      id: '/nist'
+      path: '/nist'
+      fullPath: '/nist'
+      preLoaderRoute: typeof NistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/soc-copilot': {
+      id: '/soc-copilot'
+      path: '/soc-copilot'
+      fullPath: '/soc-copilot'
+      preLoaderRoute: typeof SocCopilotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/threat-detection': {
+      id: '/threat-detection'
+      path: '/threat-detection'
+      fullPath: '/threat-detection'
+      preLoaderRoute: typeof ThreatDetectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/threat-intel': {
+      id: '/threat-intel'
+      path: '/threat-intel'
+      fullPath: '/threat-intel'
+      preLoaderRoute: typeof ThreatIntelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/voxcrypt': {
+      id: '/voxcrypt'
+      path: '/voxcrypt'
+      fullPath: '/voxcrypt'
+      preLoaderRoute: typeof VoxcryptRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/xdr': {
+      id: '/xdr'
+      path: '/xdr'
+      fullPath: '/xdr'
+      preLoaderRoute: typeof XdrRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
