@@ -6,6 +6,10 @@ export const Route = createFileRoute("/threat-detection")({
   head: () => ({ meta: [
     { title: "AI Threat Detection — ThreatZero Sentinel X" },
     { name: "description", content: "Random Forest and XGBoost live detection with confusion matrix, ROC and model health." },
+    { property: "og:title", content: "AI Threat Detection — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Random Forest and XGBoost live detection with confusion matrix, ROC and model health." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page />,
 });

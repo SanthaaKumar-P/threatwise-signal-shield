@@ -7,6 +7,10 @@ export const Route = createFileRoute("/evidence")({
   head: () => ({ meta: [
     { title: "Digital Evidence Vault — ThreatZero Sentinel X" },
     { name: "description", content: "AES-256 encrypted evidence vault with hash integrity and chain of custody." },
+    { property: "og:title", content: "Digital Evidence Vault — ThreatZero Sentinel X" },
+    { property: "og:description", content: "AES-256 encrypted evidence vault with hash integrity and chain of custody." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

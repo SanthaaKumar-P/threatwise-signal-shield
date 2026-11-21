@@ -8,6 +8,10 @@ export const Route = createFileRoute("/soc-copilot")({
   head: () => ({ meta: [
     { title: "AI SOC Copilot — ThreatZero Sentinel X" },
     { name: "description", content: "Cyber-specialist AI assistant for analysts, incident responders and CISOs." },
+    { property: "og:title", content: "AI SOC Copilot — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Cyber-specialist AI assistant for analysts, incident responders and CISOs." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

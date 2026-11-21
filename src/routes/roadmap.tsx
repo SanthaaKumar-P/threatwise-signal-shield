@@ -7,6 +7,10 @@ export const Route = createFileRoute("/roadmap")({
   head: () => ({ meta: [
     { title: "Upcoming Features — ThreatZero Sentinel X" },
     { name: "description", content: "Roadmap: post-quantum security, AR cyber command, digital twin, autonomous multi-agent AI." },
+    { property: "og:title", content: "Upcoming Features — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Roadmap: post-quantum security, AR cyber command, digital twin, autonomous multi-agent AI." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

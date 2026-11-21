@@ -6,6 +6,10 @@ export const Route = createFileRoute("/dfir")({
   head: () => ({ meta: [
     { title: "DFIR Timeline — ThreatZero Sentinel X" },
     { name: "description", content: "Interactive DFIR timeline reconstruction with MITRE tags and causal links." },
+    { property: "og:title", content: "DFIR Timeline — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Interactive DFIR timeline reconstruction with MITRE tags and causal links." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

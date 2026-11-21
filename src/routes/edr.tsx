@@ -8,6 +8,10 @@ export const Route = createFileRoute("/edr")({
   head: () => ({ meta: [
     { title: "Endpoint Detection & Response — ThreatZero Sentinel X" },
     { name: "description", content: "Endpoint telemetry, process behaviour, one-click isolation and forensic collection." },
+    { property: "og:title", content: "Endpoint Detection & Response — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Endpoint telemetry, process behaviour, one-click isolation and forensic collection." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

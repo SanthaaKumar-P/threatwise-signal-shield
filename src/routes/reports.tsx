@@ -6,6 +6,10 @@ export const Route = createFileRoute("/reports")({
   head: () => ({ meta: [
     { title: "Report Generator — ThreatZero Sentinel X" },
     { name: "description", content: "Generate SOC, executive, incident, DFIR, compliance and MITRE reports." },
+    { property: "og:title", content: "Report Generator — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Generate SOC, executive, incident, DFIR, compliance and MITRE reports." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

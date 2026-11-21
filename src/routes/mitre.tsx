@@ -6,6 +6,10 @@ export const Route = createFileRoute("/mitre")({
   head: () => ({ meta: [
     { title: "MITRE ATT&CK Command — ThreatZero Sentinel X" },
     { name: "description", content: "Interactive ATT&CK Navigator with heatmap, techniques and threat actor mapping." },
+    { property: "og:title", content: "MITRE ATT&CK Command — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Interactive ATT&CK Navigator with heatmap, techniques and threat actor mapping." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

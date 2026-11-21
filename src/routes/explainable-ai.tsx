@@ -8,6 +8,10 @@ export const Route = createFileRoute("/explainable-ai")({
   head: () => ({ meta: [
     { title: "Explainable AI (SHAP) — ThreatZero Sentinel X" },
     { name: "description", content: "SHAP feature contributions and natural language explanations behind every AI decision." },
+    { property: "og:title", content: "Explainable AI (SHAP) — ThreatZero Sentinel X" },
+    { property: "og:description", content: "SHAP feature contributions and natural language explanations behind every AI decision." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page />,
 });

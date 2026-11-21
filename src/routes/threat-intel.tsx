@@ -6,6 +6,10 @@ export const Route = createFileRoute("/threat-intel")({
   head: () => ({ meta: [
     { title: "Threat Intelligence — ThreatZero Sentinel X" },
     { name: "description", content: "IOC database, threat actors, malware and CVE intelligence." },
+    { property: "og:title", content: "Threat Intelligence — ThreatZero Sentinel X" },
+    { property: "og:description", content: "IOC database, threat actors, malware and CVE intelligence." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

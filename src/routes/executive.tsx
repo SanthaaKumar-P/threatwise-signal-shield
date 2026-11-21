@@ -8,6 +8,10 @@ export const Route = createFileRoute("/executive")({
   head: () => ({ meta: [
     { title: "Executive Dashboard — ThreatZero Sentinel X" },
     { name: "description", content: "Boardroom-grade cyber risk, business impact and compliance overview." },
+    { property: "og:title", content: "Executive Dashboard — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Boardroom-grade cyber risk, business impact and compliance overview." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

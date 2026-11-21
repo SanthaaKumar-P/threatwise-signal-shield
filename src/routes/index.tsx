@@ -10,6 +10,10 @@ export const Route = createFileRoute("/")({
   head: () => ({ meta: [
     { title: "Mission Command Centre — ThreatZero Sentinel X" },
     { name: "description", content: "Realtime cyber defence readiness, threat map, incidents, and MITRE kill chain telemetry." },
+    { property: "og:title", content: "Mission Command Centre — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Realtime cyber defence readiness, threat map, incidents, and MITRE kill chain telemetry." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: MissionCommand,
 });

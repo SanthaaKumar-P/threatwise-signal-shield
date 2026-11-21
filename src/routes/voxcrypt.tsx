@@ -6,6 +6,10 @@ export const Route = createFileRoute("/voxcrypt")({
   head: () => ({ meta: [
     { title: "VoxCrypt — ThreatZero Sentinel X" },
     { name: "description", content: "Secure evidence communication via AES + adaptive audio steganography." },
+    { property: "og:title", content: "VoxCrypt — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Secure evidence communication via AES + adaptive audio steganography." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

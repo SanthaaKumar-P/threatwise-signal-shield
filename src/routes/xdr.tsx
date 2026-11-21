@@ -6,6 +6,10 @@ export const Route = createFileRoute("/xdr")({
   head: () => ({ meta: [
     { title: "Extended Detection & Response — ThreatZero Sentinel X" },
     { name: "description", content: "Cross-surface XDR correlation with unified incident graph and attack flow." },
+    { property: "og:title", content: "Extended Detection & Response — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Cross-surface XDR correlation with unified incident graph and attack flow." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

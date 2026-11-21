@@ -7,6 +7,10 @@ export const Route = createFileRoute("/incidents")({
   head: () => ({ meta: [
     { title: "Incident Response Centre — ThreatZero Sentinel X" },
     { name: "description", content: "Live incident queue with playbooks, containment and recovery progress." },
+    { property: "og:title", content: "Incident Response Centre — ThreatZero Sentinel X" },
+    { property: "og:description", content: "Live incident queue with playbooks, containment and recovery progress." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });

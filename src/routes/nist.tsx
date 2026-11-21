@@ -6,6 +6,10 @@ export const Route = createFileRoute("/nist")({
   head: () => ({ meta: [
     { title: "NIST CSF Maturity — ThreatZero Sentinel X" },
     { name: "description", content: "NIST Cybersecurity Framework maturity, department readiness and posture over time." },
+    { property: "og:title", content: "NIST CSF Maturity — ThreatZero Sentinel X" },
+    { property: "og:description", content: "NIST Cybersecurity Framework maturity, department readiness and posture over time." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ]}),
   component: () => <Page/>,
 });
